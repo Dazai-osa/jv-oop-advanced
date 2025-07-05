@@ -14,12 +14,12 @@ public class IsoscelesTrapezoid extends Figure {
 
     @Override
     public double getArea() {
-        double area = (1 / 2) * (upperBase + lowerBase) * height;
+        double area = 0.5 * (upperBase + lowerBase) * height;
         return area;
     }
 
     @Override
-    public void toDraw() {
+    public void Draw() {
         System.out.println("Figure: isosceles trapezoid; color : " + getColor() + "; upper base: " + upperBase + "; lower base: " + lowerBase + "; height: " + height + "; area: " + getArea() + ";");
     }
 }

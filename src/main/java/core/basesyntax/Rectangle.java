@@ -17,7 +17,7 @@ public class Rectangle extends Figure {
     }
 
     @Override
-    public void toDraw() {
+    public void Draw() {
         System.out.println("Figure: rectangle; color : " + getColor() + "; length: " + length + "; width: " + width + "; area: " + getArea() + ";");
     }
 }

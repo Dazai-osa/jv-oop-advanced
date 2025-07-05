@@ -9,7 +9,7 @@ public class Main {
             mainArr[i] = (i < 4) ? figureSupplier.getRandomFidure() : figureSupplier.getDefaultFigure();
         }
          for (Figure figure : mainArr) {
-             figure.toDraw();
+             figure.Draw();
          }
     }
 }
