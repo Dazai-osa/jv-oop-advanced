@@ -5,12 +5,12 @@ import java.util.Random;
 public class FigureSupplier {
     public static final int figureCount = 5;
     public static final Random random = new Random();
-    public static final int randomNumber = random.nextInt(10);
+    public final int randomNumber = random.nextInt(10);
     public final ColorSupplier colorSupplier = new ColorSupplier();
     private final String figureColor = colorSupplier.getRandomColor();
     public static Color white = Color.WHITE;
 
-    public Figure getRandomFidure() {
+    public Figure getRandomFigure() {
         int figureType = random.nextInt(figureCount);
         switch (figureType) {
             case 0 -> {

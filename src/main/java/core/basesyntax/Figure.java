@@ -24,7 +24,7 @@ public class Figure implements ObtaineTheArea, AbleToDraw{
     }
 
     @Override
-    public void Draw() {
+    public void draw() {
 
     }
 }
