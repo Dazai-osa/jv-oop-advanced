@@ -1,0 +1,30 @@
+package core.basesyntax;
+
+public class Figure implements ObtaineTheArea, AbleToDraw{
+    private String color;
+
+    public Figure(String color) {
+        this.color = color;
+    }
+    public Figure() {
+
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    @Override
+    public double getArea() {
+        return 0;
+    }
+
+    @Override
+    public void toDraw() {
+
+    }
+}
