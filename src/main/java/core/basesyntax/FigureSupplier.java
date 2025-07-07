@@ -3,15 +3,15 @@ package core.basesyntax;
 import java.util.Random;
 
 public class FigureSupplier {
-    public static final int figureCount = 5;
-    public static final Random random = new Random();
+    public static final int Count = 5;
+    public final Random random = new Random();
     public final int randomNumber = random.nextInt(10);
     public final ColorSupplier colorSupplier = new ColorSupplier();
     private final String figureColor = colorSupplier.getRandomColor();
     public static Color white = Color.WHITE;
 
     public Figure getRandomFigure() {
-        int figureType = random.nextInt(figureCount);
+        int figureType = random.nextInt(Count);
         switch (figureType) {
             case 0 -> {
                 return new Square(figureColor, randomNumber);
@@ -30,7 +30,17 @@ public class FigureSupplier {
             }
             default ->
             {
-                return new Figure();
+                return new Figure() {
+                    @Override
+                    public double getArea() {
+                        return 0;
+                    }
+
+                    @Override
+                    public void draw() {
+
+                    }
+                };
             }
         }
     }
