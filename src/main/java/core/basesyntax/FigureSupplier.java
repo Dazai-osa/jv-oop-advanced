@@ -28,22 +28,9 @@ public class FigureSupplier {
             }
             default ->
             {
-                return new Figure(randomColor) {
-                    @Override
-                    public double getArea() {
-                        return 0;
-                    }
+                return new Circle(Color.WHITE.name(), MAX_RANDOM_NUMBER);
 
-                    @Override
-                    public void draw() {
-
-                    }
-                };
             }
         }
-    }
-
-    public Figure getDefaultFigure() {
-        return new Circle(Color.WHITE.name(), MAX_RANDOM_NUMBER);
     }
 }
