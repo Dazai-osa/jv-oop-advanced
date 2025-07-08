@@ -6,34 +6,29 @@ public class FigureSupplier {
     private static final int NUMBER_OF_FIGURE = 5;
     private static final int MAX_RANDOM_NUMBER = 10;
     public final Random random = new Random();
-    /*public final int randomNumber = random.nextInt(MAX_RANDOM_NUMBER);*/
     public final ColorSupplier colorSupplier = new ColorSupplier();
-    /*private final String figureColor = colorSupplier.getRandomColor();*/
-    public static Color white = Color.WHITE;
-
+    String randomColor = colorSupplier.getRandomColor();
     public Figure getRandomFigure() {
         int figureType = random.nextInt(NUMBER_OF_FIGURE);
-        /*int randomNumber = random.nextInt(MAX_RANDOM_NUMBER);
-        final String figureColor = colorSupplier.getRandomColor();*/
         switch (figureType) {
             case 0 -> {
-                return new Square(colorSupplier.getRandomColor(), random.nextInt(MAX_RANDOM_NUMBER));
+                return new Square(randomColor, random.nextInt(MAX_RANDOM_NUMBER));
             }
             case 1 -> {
-                return new Rectangle(colorSupplier.getRandomColor(), random.nextInt(MAX_RANDOM_NUMBER), random.nextInt(MAX_RANDOM_NUMBER));
+                return new Rectangle(randomColor, random.nextInt(MAX_RANDOM_NUMBER), random.nextInt(MAX_RANDOM_NUMBER));
             }
             case 2 -> {
-                return new RightTriangle(colorSupplier.getRandomColor(), random.nextInt(MAX_RANDOM_NUMBER), random.nextInt(MAX_RANDOM_NUMBER));
+                return new RightTriangle(randomColor, random.nextInt(MAX_RANDOM_NUMBER), random.nextInt(MAX_RANDOM_NUMBER));
             }
             case 3 -> {
-                return new Circle(colorSupplier.getRandomColor(), random.nextInt(MAX_RANDOM_NUMBER));
+                return new Circle(randomColor, random.nextInt(MAX_RANDOM_NUMBER));
             }
             case 4 -> {
-                return new IsoscelesTrapezoid(colorSupplier.getRandomColor(), random.nextInt(MAX_RANDOM_NUMBER), random.nextInt(MAX_RANDOM_NUMBER), random.nextInt(MAX_RANDOM_NUMBER));
+                return new IsoscelesTrapezoid(randomColor, random.nextInt(MAX_RANDOM_NUMBER), random.nextInt(MAX_RANDOM_NUMBER), random.nextInt(MAX_RANDOM_NUMBER));
             }
             default ->
             {
-                return new Figure(colorSupplier.getRandomColor()) {
+                return new Figure(randomColor) {
                     @Override
                     public double getArea() {
                         return 0;
@@ -49,6 +44,6 @@ public class FigureSupplier {
     }
 
     public Figure getDefaultFigure() {
-        return new Circle(white.name(), MAX_RANDOM_NUMBER);
+        return new Circle(Color.WHITE.name(), MAX_RANDOM_NUMBER);
     }
 }
